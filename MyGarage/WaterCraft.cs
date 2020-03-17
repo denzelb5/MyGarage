@@ -4,17 +4,17 @@ using System.Text;
 
 namespace MyGarage
 {
-    class WaterCraft
+    class WaterCraft : Vehicle
     {
-        public int FuelCapacity { get; set; }
-        public int Occupancy { get; set; }
-        public string Color { get; set; }
+        public override int FuelCapacity { get; set; }
+        public override int Occupancy { get; set; }
+        public override string Color { get; set; }
 
-        public WaterCraft(int fuelCapacity, int occupancy, string color)
+        public string Name { get; set; }
+
+        public WaterCraft(string name)
         {
-            FuelCapacity = fuelCapacity;
-            Occupancy = occupancy;
-            Color = color;
+            Name = name;
         }
     }
 }

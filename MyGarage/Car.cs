@@ -4,26 +4,24 @@ using System.Text;
 
 namespace MyGarage
 {
-    class Car
+    class Car : Vehicle
     {
-        public int FuelCapacity { get; set; }
+        public override int FuelCapacity { get; set; }
         public string FuelType { get; set; }
-        public string Color { get; set; }
-        public int Occupancy { get; set; }
+        public override string Color { get; set; }
+        public override int Occupancy { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
 
-        public Car(string color, string make, string model, int fuelCapacity, int occupancy, string fuelType) 
+        
+        public Car(string make, string model)
         {
-            Color = color;
             Make = make;
             Model = model;
-            FuelCapacity = fuelCapacity;
-            FuelType = fuelType;
-            Occupancy = occupancy;
         }
 
-        public void ReFuel()
+
+        public override void ReFuel()
         {
             Console.WriteLine("What enging type is your vehicle?  Gas or electric?");
             var answer = Console.ReadLine();
@@ -56,19 +54,7 @@ namespace MyGarage
             }
         }
 
-        public void Drive()
-        {
-            Console.WriteLine("Are you wearing your seatbelt? y / n");
-            var seatbelt = Console.ReadLine();
-            if (seatbelt == "y")
-            {
-            Console.WriteLine("Throw your car in gear and hit the road!");
-            }
-            else
-            {
-                Console.WriteLine("Put your seatbelt on dum-dum!");
-            }
-        }
+
 
         public void Brake()
         {
