@@ -4,17 +4,16 @@ using System.Text;
 
 namespace MyGarage
 {
-    class Aircraft
+    class Aircraft : Vehicle
     {
-        public int FuelCapacity { get; set; }
-        public string Color { get; set; }
-        public int Occupancy { get; set; }
+        public override int FuelCapacity { get; set; }
+        public override string Color { get; set; }
+        public override int Occupancy { get; set; }
+        public string Name { get; set; }
 
-        public Aircraft(int fuelCapacity, string color, int occupancy)
+        public Aircraft(string name)
         {
-            FuelCapacity = fuelCapacity;
-            Color = color;
-            Occupancy = occupancy;
+            Name = name;
         }
 
         public void ReFuel(int fuelCapacity)
